@@ -2,11 +2,12 @@ package exercises;
 
 public class Cat {
 
-	private String name;
-	private int lives = 9;
+	private final String name;
+	private int lives;
 
-	Cat(String name) {
+	Cat(String name, int lives) {
 		this.name = name;
+		this.lives = lives;
 	}
 
 	void meow() {
@@ -20,7 +21,7 @@ public class Cat {
 			System.out.println("my name is " + name);
 	}
 
-	void kill(int lives) {
+	void kill() {
 		lives--;
 		if (lives > 0)
 			System.out.println("nice try, but I still have " + lives + " lives left");
@@ -32,16 +33,16 @@ public class Cat {
 
 	public static void main(String[] args) {
 		/* Do the following things without changing the Cat class */
-		Cat cat = new Cat("ManBoy");
+		Cat cat = new Cat("ManBoy", 0);
 
 		// 1. Make the Cat meow
 		cat.meow();
 
-		// 2. Get the Cat to print it's name
+		// 2. Get the Cat to print its name
 		cat.printName();
 
 		// 3. Kill the Cat!
-		cat.kill(-20);
+		cat.kill();
 
 	}
 }
